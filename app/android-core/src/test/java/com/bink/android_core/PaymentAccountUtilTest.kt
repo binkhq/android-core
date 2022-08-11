@@ -96,11 +96,6 @@ class PaymentAccountUtilTest {
     }
 
     @Test
-    fun checkPresentedAmExSingle() {
-        assertEquals(PaymentCardType.AMEX, PaymentAccountUtil.presentedCardType("3"))
-    }
-
-    @Test
     fun checkPresentedAmEx() {
         assertEquals(PaymentCardType.AMEX, PaymentAccountUtil.presentedCardType("34"))
     }
@@ -151,13 +146,8 @@ class PaymentAccountUtilTest {
     }
 
     @Test
-    fun validateDateNoSlash() {
-        assertTrue(PaymentAccountUtil.dateValidation("1021"))
-    }
-
-    @Test
-    fun validateDateWithSlash() {
-        assertTrue(PaymentAccountUtil.dateValidation("10/21"))
+    fun validateYearCorrect() {
+        assertTrue(PaymentAccountUtil.dateValidation("12/23"))
     }
 
     @Test
@@ -200,8 +190,4 @@ class PaymentAccountUtilTest {
         assertFalse(PaymentAccountUtil.dateValidation("/"))
     }
 
-    @Test
-    fun testExpiryValid() {
-        assertTrue(PaymentAccountUtil.dateValidation("12/20"))
-    }
 }
