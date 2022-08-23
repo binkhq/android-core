@@ -25,7 +25,7 @@ object PaymentAccountUtil {
     const val DIGITS_VISA_MASTERCARD = 16
     const val DIGITS_AMERICAN_EXPRESS = 15
 
-    fun randomString(length: Int): String {
+    fun generateToken(length: Int): String {
         val charPool: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
         return (1..length)
             .map { Random.nextInt(0, charPool.size) }
